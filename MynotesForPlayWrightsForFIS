@@ -1,0 +1,50 @@
+
+Initial setup 
+
+1. download : node js
+2. Visual studio code : ID
+3. Download : NPM
+
+
+Environment setup for playwright
+-------------------------------------
+1. install nodejs --- version above 18
+
+https://nodejs.org/en/download
+
+
+Environmental
+
+1. install : node js
+2. install : git 
+
+
+cmd> node --version
+cmd> npm --version
+
+node -v
+npm -v 
+
+2. create folder :: create folder for playwright framework
+and open cmd in the folder
+folder>npm init playwright@latest
+
+
+3. installation of visual code
+https://code.visualstudio.com/download
+
+
+playwright comments:
+
+
+IF YOU CAN'T ABLE TO RUN THE FILE YOU NEED CHANGE THE FIREWALL CONFIG
+
+1. open menu and search "Windows PowerShell"
+2. run the comment "Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser"
+3. then run file comment "npx playwright test" 
+
+
+playwright comments:
+ 
+1. initial the software : npm init playwright@latest
+2. run the program : npx playwright test
