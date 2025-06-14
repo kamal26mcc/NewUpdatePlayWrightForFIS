@@ -1,0 +1,196 @@
+Playwright
+---------------
+
+OpenSource
+Microsoft - 2020
+WebApplications, APIs, Mobile browser applications
+Functional and Regression Testing
+Java,python, C#, and Node.js ( javascript + Typescript)
+cross browser testing tool
+cross platform testing tool
+
+Advantages of playwright
+---------------------------
+1. Easy setup and configuration
+2. multi browser support: chromium family(chrome+edge), webkit(safari), firefox
+3. Multi language support: java, python, C#,and nodejs
+4. Types of testing: Functional, End to End , API testing, and Mobile browser app testing
+5. parallel browser testing
+6. Supports for multiple tabs/browser testing
+7. Debugging easy.
+8. Auto-waiting feature.
+
+Dis-Advantage
+----------------
+1. It does not support IE
+2. No support from playwright developers
+3. Native mobile applications can not be tested.
+
+checkList-Day1
+-----------------
+1. Setup Test Environment for playwright...
+2. hooks - test, test.skip,test.only, test.beforeEach, test.afterEach, test.beforeAll, test.afterAll...
+3. fixtures in playwright, work with browser
+4. open url... Assertions - HardAssert, softAssert
+5. 3 testcases for Amazon.com -locators, promises, how to handle promises, click,AutoWaiting, how to run spec files serially and parallel , how view default html report.
+
+
+Environment setup for playwright
+-------------------------------------
+1. install nodejs --- version above 18
+
+https://nodejs.org/en/download
+cmd> node --version
+cmd> npm --version
+
+2. create folder
+and open cmd in the folder
+folder>npm init playwright@latest
+
+
+3. installation of visual code
+https://code.visualstudio.com/download
+
+test()
+test.only();
+test.skip();
+test.beforeEach();
+test.afterEach();
+test.beforeAll();
+test.afterAll();
+
+test.beforeAll();
+test.beforeEach();
+test()
+test.only();
+test.skip();
+test.afterEach();
+test.afterAll();
+
+
+fixtures / Global variables ---> browser, page
+
+
+execution status of a line of code called promise
+
+3 types promises 
+
+a. pending
+b. resolved 
+c. Reject
+
+Assertions: is a feature in playwright where we compare expvalues with actual values. 
+both ---matching- pass
+both -mismatching- Fail
+
+2 types of Assertions in playwright
+
+a. Hard Assert
+await expect(page).toHaveTitle("Amazon.com. Spend less. Smile more!!!!.")
+b. Soft Assert
+await expect.soft(page).toHaveTitle("Amazon.com. Spend less. Smile more!!!!.")
+
+
+Ts : Add an item to cart from items Department
+
+Tc01: Add an item to cart from movieAndTv
+
+OpenBrowser
+Enter url
+click on Todaysdeal
+click on seemore
+select movie and tv department
+click on first item
+click on add2cart
+verifysuccesmsg
+closeBrowser
+
+
+Tc02: Add an item to cart from software
+
+OpenBrowser
+Enter url
+click on Todaysdeal
+click on seemore
+select software department
+click on first item
+click on add2cart
+verifysuccesmsg
+closeBrowser
+
+Tc03: Add an item to cart from videogames
+
+OpenBrowser
+Enter url
+click on Todaysdeal
+click on seemore
+select videogames department
+click on first item
+click on add2cart
+verifysuccesmsg
+closeBrowser
+
+
+
+playwright Recognizes an element by 2 ways - Locators
+--------------------------------------------------------
+1. xpath  - address of an object in the webpage
+2. cssSelector
+
+2 types of xpath
+-----------------
+1. Abosolute xpath /complete xpath / full xpath
+/html/body/div[1]/header/div/div[5]/div[2]/div/div/ul/li[1]/div/a - can't
+
+2. Relative xpath
+//*[@id="nav-xshop"]/ul/li[1]/div/a	
+
+Write xpath manual xpath/ customized xpath ****
+
+
+npx playwright test
+    Runs the end-to-end tests.
+
+  npx playwright test --ui
+    Starts the interactive UI mode.
+
+  npx playwright test --project=chromium
+    Runs the tests only on Desktop Chrome.
+
+  npx playwright test example
+    Runs the tests in a specific file.
+
+  npx playwright test --debug
+    Runs the tests in debug mode.
+
+  npx playwright codegen
+    Auto generate tests with Codegen.
+
+We suggest that you begin by typing:
+
+    npx playwright test
+
+headless mode- without launching browser if testCases are executed internally
+headed mode - it launch browser an execute testCases
+
+Note: 
+1. In playwright by default test cases will be executed parallely
+2. In playwright by default test cases will be executed in the headless mode
+
+1. why do we use async and await.?
+2. what is the default timeout for Assertion/expect ? 5000msec
+3. can we increase / decrease this expect timeout? yes -->  expect:{timeout:10000},
+4. The default timeout to for performing an action on an element is 30000msec?
+5. what is the polling time ( recheck time /Frequency of recheck) ? 500msec
+6. can we increase or decrease this default time out? yes
+ timeout:2 *30000,
+
+a. npx playwright test
+b. npx playwright test <spec file name>
+b. npx playwright test <specfilename> --headed
+
+
+//tagname[@attrname='attr_Value']
+//input[@data-action-type='DISMISS']
+
+await expect.soft(page).toHaveTitle("Amazon.com. Spend less. Smile more!!!!.")
